@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "754920655653",
+    "project_id": "quizzykids-f91b7",
+    "storage_bucket": "quizzykids-f91b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754920655653:android:936b8828e8fe8951b2a8cc",
+        "android_client_info": {
+          "package_name": "com.example.quizzykids"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754920655653-8rrtgs6oaiet1c7evbfm2gtqoo9gf3id.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCHZAyS5G55VgCQaBzdBqByqE9-zXs3Cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754920655653-8rrtgs6oaiet1c7evbfm2gtqoo9gf3id.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "754920655653-0afr20f6e6g4kpghjp71offak4qg9bce.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quizzykids"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
