@@ -4,6 +4,7 @@ import 'package:quizzykids/ui/forgot_password.dart';
 import 'package:quizzykids/ui/home_screen.dart';
 import 'package:quizzykids/ui/login.dart';
 import 'package:quizzykids/ui/register.dart';
+import 'package:quizzykids/ui/register_succes.dart';
 
 MaterialPageRoute _pageRoute(
   {
@@ -32,6 +33,9 @@ Route? generateRoute(RouteSettings settings){
     case rForgotPassword:
       _route = _pageRoute(body: const ForgotPassword(), settings: settings);
       break;
+    case rRegisterSuccess:
+      _route = _pageRoute(body: const RegisterSuccessScreen(), settings: settings);
+      break;
   }
   return _route;
 }
@@ -42,3 +46,4 @@ const String rRegister = '/register';
 const String rHome = '/home';
 const String rEmailLogin = '/emaillogin';
 const String rForgotPassword = '/forgotpassword';
+const String rRegisterSuccess = '/registersuccess';

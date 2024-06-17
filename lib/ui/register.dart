@@ -42,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen>{
                   content: Text(state.msg),
                   backgroundColor: Colors.green,
                   ));
-                Navigator.pushNamedAndRemoveUntil(context, rHome, (route) => false);
+                Navigator.pushNamedAndRemoveUntil(context, rRegisterSuccess, (route) => false);
               }
               if(state is RegisterLoading){
                 ScaffoldMessenger.of(context)
@@ -136,7 +136,7 @@ class _RegisterScreenState extends State<RegisterScreen>{
                           ),
                           const SizedBox(height: 24,),
                           ElevatedButton(
-                            onPressed: () {
+                            onPressed: () async {
                               context.read<RegisterCubit>()
                                 .register(
                                   email: emailEdc.text,

@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quizzykids/routes/route.dart';
 import 'package:quizzykids/styles/colors.dart';
 import 'package:quizzykids/styles/text_styles.dart';
