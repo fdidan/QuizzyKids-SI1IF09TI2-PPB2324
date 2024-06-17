@@ -5,6 +5,7 @@ import 'package:quizzykids/bloc/login/login_cubit.dart';
 import 'package:quizzykids/bloc/register/register_cubit.dart';
 import 'package:quizzykids/routes/route.dart';
 import 'package:quizzykids/ui/home_screen.dart';
+import 'package:quizzykids/ui/quiz_screen.dart';
 import 'package:quizzykids/ui/register_succes.dart';
 import 'package:quizzykids/ui/splash.dart';
 import 'firebase_options.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         navigatorKey: NAV_KEY,
         onGenerateRoute: generateRoute,
-        home: const HomeScreen(),
+        home: const QuizScreen(),
       ),
     );
   }

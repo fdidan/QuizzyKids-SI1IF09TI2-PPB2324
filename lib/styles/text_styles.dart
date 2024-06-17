@@ -38,6 +38,12 @@ TextStyle kHeading6 = GoogleFonts.poppins(
   color: kWhite
 );
 
+TextStyle kHeading7 = GoogleFonts.poppins(
+  fontSize: 25,
+  fontWeight: FontWeight.w600,
+  color: kBlack
+);
+
 TextStyle kButton1 = GoogleFonts.poppins(
   fontSize: 20,
   fontWeight: FontWeight.w600,
