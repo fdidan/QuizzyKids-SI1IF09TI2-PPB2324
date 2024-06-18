@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen>{
     var heightDevice = MediaQuery.sizeOf(context).height;
     var widthDevice = MediaQuery.sizeOf(context).width;
 
+
     return Stack(
       children: [
         Container(
@@ -66,9 +67,15 @@ class _HomeScreenState extends State<HomeScreen>{
                         onTap: () {
                           //
                         },
-                        child: Text(
-                          'Profilku',
-                          style: kHeading8,
+                        child: StreamBuilder(
+                          stream: FirebaseAuth.instance.authStateChanges(),
+                          builder: (context, snapshot){
+                            var userName = snapshot.data?.displayName.toString();
+                            return Text(
+                              '$userName',
+                              style: kHeading8,
+                            ); 
+                          }
                         ),
                       )
                     ],
