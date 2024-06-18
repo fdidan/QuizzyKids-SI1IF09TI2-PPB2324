@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quizzykids/bloc/login/login_cubit.dart';
 import 'package:quizzykids/bloc/register/register_cubit.dart';
 import 'package:quizzykids/routes/route.dart';
+import 'package:quizzykids/ui/home_screen.dart';
+import 'package:quizzykids/ui/login.dart';
 import 'package:quizzykids/ui/splash.dart';
 import 'firebase_options.dart';
 
@@ -31,7 +34,17 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         navigatorKey: NAV_KEY,
         onGenerateRoute: generateRoute,
-        home: const SplashScreen(),
+        home: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot){
+            if(snapshot.hasData){
+              return const HomeScreen();
+            }if(snapshot.hasError){
+              return const LoginScreen();
+            }
+            return const SplashScreen();
+          },
+        ),
       ),
     );
   }

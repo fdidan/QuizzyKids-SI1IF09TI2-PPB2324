@@ -3,6 +3,7 @@ import 'package:quizzykids/ui/email_login.dart';
 import 'package:quizzykids/ui/forgot_password.dart';
 import 'package:quizzykids/ui/home_screen.dart';
 import 'package:quizzykids/ui/login.dart';
+import 'package:quizzykids/ui/quiz_screen.dart';
 import 'package:quizzykids/ui/register.dart';
 import 'package:quizzykids/ui/register_succes.dart';
 
@@ -36,6 +37,9 @@ Route? generateRoute(RouteSettings settings){
     case rRegisterSuccess:
       _route = _pageRoute(body: const RegisterSuccessScreen(), settings: settings);
       break;
+    case rQuiz:
+      _route = _pageRoute(body: const QuizScreen(), settings: settings);
+      break;
   }
   return _route;
 }
@@ -47,3 +51,4 @@ const String rHome = '/home';
 const String rEmailLogin = '/emaillogin';
 const String rForgotPassword = '/forgotpassword';
 const String rRegisterSuccess = '/registersuccess';
+const String rQuiz = '/quizscreen';

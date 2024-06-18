@@ -1,12 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:quizzykids/bloc/login/login_cubit.dart';
 import 'package:quizzykids/routes/route.dart';
 import 'package:quizzykids/styles/colors.dart';
 import 'package:quizzykids/styles/text_styles.dart';
-import 'package:quizzykids/ui/home_screen.dart';
 
 class EmailLogin extends StatefulWidget{
   const EmailLogin({super.key});
@@ -20,20 +17,6 @@ class _EmailLoginState extends State<EmailLogin>{
   final passEdc = TextEditingController();
 
   bool passInvisible = false;
-
-  Future<UserCredential> signInWithGoogle() async {
-    final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
-    final GoogleSignInAuthentication gAuth = await gUser!.authentication;
-    final credential = GoogleAuthProvider.credential(
-      accessToken: gAuth.accessToken,
-      idToken: gAuth.idToken,
-    );
-    return await FirebaseAuth.instance.signInWithCredential(credential).then(
-      (value) async => await Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-        (route) => false));
-  }
 
   @override 
   Widget build(BuildContext context) {
@@ -168,8 +151,7 @@ class _EmailLoginState extends State<EmailLogin>{
                           const SizedBox(height: 18,),
                           ElevatedButton(
                             onPressed: () {
-                              context.read<LoginCubit>()
-                                .login(
+                              context.read<LoginCubit>().login(
                                   email: emailEdc.text,
                                   password: passEdc.text
                                 );

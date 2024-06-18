@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "754920655653-888k2kq6ni8qq92ojjp58nq7k13a79k8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quizzykids",
+            "certificate_hash": "221fc71d7c4bf3f9f590ac07073064fd333f7eef"
+          }
+        },
+        {
           "client_id": "754920655653-8rrtgs6oaiet1c7evbfm2gtqoo9gf3id.apps.googleusercontent.com",
           "client_type": 3
         }

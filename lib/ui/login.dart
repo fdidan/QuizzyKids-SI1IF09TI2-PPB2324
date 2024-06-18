@@ -111,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen>{
             ),
             ElevatedButton(
               onPressed: () {
-                signInWithFacebook();
+                //signInWithFacebook();
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: kBlack.withOpacity(0.2),

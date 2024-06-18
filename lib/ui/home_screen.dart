@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:quizzykids/routes/route.dart';
 import 'package:quizzykids/styles/colors.dart';
 import 'package:quizzykids/styles/text_styles.dart';
 import 'package:quizzykids/ui/login.dart';
@@ -32,20 +35,82 @@ class _HomeScreenState extends State<HomeScreen>{
           resizeToAvoidBottomInset: false,
           backgroundColor: const Color.fromARGB(0, 255, 193, 7),
           appBar: AppBar(
-            title: Text('Quizzy Kids', style: kHeading1,),
-            backgroundColor: kYellow,
+            iconTheme: const IconThemeData(color: kWhite),
+            title: Text('Quizzy Kids', style: kHeading6,),
+            backgroundColor: kDeepPurple,
             toolbarHeight: heightDevice * 0.08,
             actions: const [
               
             ],
           ),
           endDrawer: Drawer(
-            child: ListView(
-              children: const [
-                ListTile(
-                  title: Text('Profilku'),
-                )
-              ],
+            width: widthDevice * 0.6,
+            backgroundColor: Color.fromARGB(0, 255, 193, 7),
+            child: Container(
+              padding: EdgeInsets.only(
+                left: widthDevice * 0.06,
+              ),
+              margin: EdgeInsets.only(top: heightDevice * 0.05, bottom: heightDevice * 0.4),
+              decoration: const BoxDecoration(
+                color: kDeepPurple,
+                borderRadius: BorderRadius.all(Radius.circular(20))
+              ),
+              child: ListView(
+                itemExtent: 34,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.account_circle_rounded, color: kWhite,),
+                      const SizedBox(width: 14,),
+                      GestureDetector(
+                        onTap: () {
+                          //
+                        },
+                        child: Text(
+                          'Profilku',
+                          style: kHeading8,
+                        ),
+                      )
+                    ],
+                  ),
+                  ListTile(
+                    title: Text('Profilku', style: kSubtitle1,),
+                    onTap: () {
+                      //
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Pesan', style: kSubtitle1),
+                    onTap: () {
+                      //
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Notifikasi', style: kSubtitle1),
+                    onTap: () {
+                      //
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Peringkat', style: kSubtitle1),
+                    onTap: () {
+                      //
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Pengaturan', style: kSubtitle1),
+                    onTap: () {
+                      //
+                    },
+                  ),
+                  ListTile(
+                    title: Text('Bantuan & Dukungan', style: kSubtitle1),
+                    onTap: () {
+                      //
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
           body: Center(
@@ -82,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen>{
                     ),
                     GestureDetector(
                       onTap: () {
-                        
+                        (context) => Navigator.pushNamed(context, rQuiz);
                       },
                       child: Column(
                         children: [
