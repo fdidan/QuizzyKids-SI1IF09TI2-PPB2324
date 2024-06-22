@@ -25,9 +25,6 @@ Route? generateRoute(RouteSettings settings){
     case rRegister:
       _route = _pageRoute(body: const RegisterScreen(), settings: settings);
       break;
-    case rHome:
-      _route = _pageRoute(body: const HomeScreen(), settings: settings);
-      break;
     case rEmailLogin : 
       _route = _pageRoute(body: const EmailLogin(), settings: settings);
       break;
@@ -37,8 +34,16 @@ Route? generateRoute(RouteSettings settings){
     case rRegisterSuccess:
       _route = _pageRoute(body: const RegisterSuccessScreen(), settings: settings);
       break;
+    case rHome:
+      _route = _pageRoute(body: const HomeScreen(), settings: settings);
+      break;
     case rQuiz:
-      _route = _pageRoute(body: const QuizScreen(), settings: settings);
+      _args as String;
+      _route = _pageRoute(body: QuizScreen(kategori: _args,), settings: settings,);
+      break;
+    case rSkor:
+      _args as String;
+      _route = _pageRoute(body: QuizScreen(kategori: _args,), settings: settings);
       break;
   }
   return _route;
@@ -52,3 +57,4 @@ const String rEmailLogin = '/emaillogin';
 const String rForgotPassword = '/forgotpassword';
 const String rRegisterSuccess = '/registersuccess';
 const String rQuiz = '/quizscreen';
+const String rSkor = '/skorscreen';

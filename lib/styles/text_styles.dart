@@ -92,6 +92,12 @@ TextStyle kSubtitle2 = GoogleFonts.poppins(
   color: kDeepPurple,
 );
 
+TextStyle kSubtitle3 = GoogleFonts.poppins(
+  fontSize: 18,
+  fontWeight: FontWeight.w500,
+  color: kDeepPurple,
+);
+
 TextStyle kBody1 = GoogleFonts.poppins(
   fontSize: 12,
   fontWeight: FontWeight.w500

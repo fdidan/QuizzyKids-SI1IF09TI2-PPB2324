@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen>{
     var heightDevice = MediaQuery.sizeOf(context).height;
     var widthDevice = MediaQuery.sizeOf(context).width;
 
-
     return Stack(
       children: [
         Container(
@@ -71,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen>{
                           stream: FirebaseAuth.instance.authStateChanges(),
                           builder: (context, snapshot){
                             var userName = snapshot.data?.displayName.toString();
+                            //snapshot.data?.d
                             return Text(
                               '$userName',
                               style: kHeading8,
@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen>{
                   children: [
                     GestureDetector(
                       onTap: () {
-                        
+                        Navigator.pushNamed(context, rQuiz, arguments: 'Musik');
                       },
                       child: Column(
                         children: [
@@ -154,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen>{
                     ),
                     GestureDetector(
                       onTap: () {
-                        (context) => Navigator.pushNamed(context, rQuiz);
+                        (context) => Navigator.pushNamed(context, rQuiz, arguments: 'Sejarah');
                       },
                       child: Column(
                         children: [
@@ -178,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen>{
                   children: [
                     GestureDetector(
                       onTap: () {
-                        
+                        Navigator.pushNamed(context, rQuiz, arguments: 'Olahraga');
                       },
                       child: Column(
                         children: [
@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen>{
                     ),
                     GestureDetector(
                       onTap: () {
-                        
+                        Navigator.pushNamed(context, rQuiz, arguments: 'Binatang');
                       },
                       child: Column(
                         children: [

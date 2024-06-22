@@ -1,13 +1,15 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quizzykids/bloc/login/login_cubit.dart';
 import 'package:quizzykids/bloc/register/register_cubit.dart';
+import 'package:quizzykids/model/question_model.dart';
 import 'package:quizzykids/routes/route.dart';
 import 'package:quizzykids/ui/home_screen.dart';
+import 'package:quizzykids/ui/quiz_screen.dart';
 import 'package:quizzykids/ui/splash.dart';
 import 'firebase_options.dart';
+import 'package:quizzykids/model/db_connect.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +17,6 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -33,16 +34,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         navigatorKey: NAV_KEY,
         onGenerateRoute: generateRoute,
-        home: StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, snapshot){
-            if(snapshot.hasData){
-              return const HomeScreen();
-            }else{
-              return const SplashScreen();
-            }
-          },
-        ),
+        initialRoute: rHome,
       ),
     );
   }

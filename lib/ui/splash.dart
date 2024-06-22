@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:quizzykids/routes/route.dart';
 import 'package:quizzykids/styles/colors.dart';
 import 'package:quizzykids/styles/text_styles.dart';
+import 'package:quizzykids/ui/login.dart';
 
 class SplashScreen extends StatefulWidget{
   const SplashScreen({super.key});
@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget{
 class _SplashScreenState extends State<SplashScreen>{
   @override
   void initState(){
-    Timer(const Duration(seconds: 3), () => print('Timer start'));
+    Timer(const Duration(seconds: 3), () => const LoginScreen());
     super.initState();
   }
 
