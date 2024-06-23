@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:quizzykids/model/db_connect.dart';
 import 'package:quizzykids/routes/route.dart';
 import 'package:quizzykids/styles/colors.dart';
 import 'package:quizzykids/styles/text_styles.dart';
@@ -13,6 +14,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  @override
+  void initState(){
+    super.initState();
+    DbConnect();
+  }
+
   @override
   Widget build(BuildContext context) {
     var heightDevice = MediaQuery.sizeOf(context).height;
@@ -169,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        (context) => Navigator.pushNamed(context, rHistoryQuiz);
+                        Navigator.pushNamed(context, rHistoryQuiz);
                       },
                       child: Column(
                         children: [

@@ -40,7 +40,7 @@ class _MusicQuizScreenState extends State<MusicQuizScreen> {
   int salah = 0;
   double skor = 0;
   int itemCount = 0;
-  final List<Question> _question = [];
+  late List<Question> _question = [];
   late Future<List<Question>> _questionFuture;
   Map<String, dynamic> mapSkor = {'kategori': 'Musik'};
 

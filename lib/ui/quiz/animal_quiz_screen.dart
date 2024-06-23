@@ -19,9 +19,10 @@ class AnimalQuizScreen extends StatefulWidget {
 
 class _AnimalQuizScreenState extends State<AnimalQuizScreen> {
   _AnimalQuizScreenState();
+
   @override
-  // ignore: must_call_super
   void initState() {
+    super.initState();
     _questionFuture = db.fetchAnimalQuestion();
     _questionFuture.then((data) {
       itemCount = data.length;
@@ -41,15 +42,18 @@ class _AnimalQuizScreenState extends State<AnimalQuizScreen> {
   int itemCount = 0;
   final List<Question> _question = [];
   late Future<List<Question>> _questionFuture;
-  List<String> listSkor = [];
+  Map<String, dynamic> mapSkor = {'kategori': 'Animal'};
 
   void nextQuestion(int questionLength) {
     if (index == questionLength - 1) {
-      skor = (benar / salah) * 100;
-      listSkor.add(skor.toString());
-      listSkor.add(benar.toString());
-      listSkor.add(salah.toString());
-      Navigator.popAndPushNamed(context, rSkor, arguments: '$listSkor');
+      skor = (benar / questionLength) * 100;
+      final finalSkor = <String, dynamic>{
+        'skor': skor,
+        'benar': benar,
+        'salah': salah
+      };
+      mapSkor.addEntries(finalSkor.entries);
+      Navigator.popAndPushNamed(context, rSkor, arguments: mapSkor);
     } else if (index < questionLength - 1) {
       if (isPressed != true) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
