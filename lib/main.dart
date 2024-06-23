@@ -3,13 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quizzykids/bloc/login/login_cubit.dart';
 import 'package:quizzykids/bloc/register/register_cubit.dart';
-import 'package:quizzykids/model/question_model.dart';
 import 'package:quizzykids/routes/route.dart';
-import 'package:quizzykids/ui/home_screen.dart';
-import 'package:quizzykids/ui/quiz_screen.dart';
-import 'package:quizzykids/ui/splash.dart';
 import 'firebase_options.dart';
-import 'package:quizzykids/model/db_connect.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +29,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         navigatorKey: NAV_KEY,
         onGenerateRoute: generateRoute,
-        initialRoute: rHome,
+        initialRoute: rLogin,
+        //home: const SplashScreen(),
       ),
     );
   }

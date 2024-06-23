@@ -14,7 +14,6 @@ class AuthRepo{
         password: password
       );
     }on FirebaseAuthException catch (e){
-      print(e.message ?? 'Something wrong!');
       e.message ?? 'Something wrong!';
     }catch (e){
       rethrow;

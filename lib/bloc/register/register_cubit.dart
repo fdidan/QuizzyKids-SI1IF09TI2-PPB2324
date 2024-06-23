@@ -18,7 +18,6 @@ class RegisterCubit extends Cubit<RegisterState>{
       await _repo.register(email: email, password: password);
       emit(RegisterSuccess('Berhasil!'));
     }catch (e){
-      print(e);
       emit(RegisterFailure(e.toString()));
     }
   }
